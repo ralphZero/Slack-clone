@@ -1,6 +1,14 @@
 * { margin: 0; padding: 0; box-sizing: border-box;}
+*:focus {outline: none;}
 html, body {height: 100%;}
-
+body {font-family: sans-serif;}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffffa9;
+  opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #ffffffa9;
+}
 .chatwrapper {
   display: flex;
   height: 100%;
