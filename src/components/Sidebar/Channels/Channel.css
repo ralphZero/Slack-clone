@@ -1,0 +1,18 @@
+.channeltitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+    padding: 8px 5%;
+}
+
+.channel {
+    display: flex;
+    align-items: center;
+    padding: 6px 5%;
+    gap: 5%;
+}
+.channel:hover {
+    cursor: pointer;
+    background-color: #14141444;
+}

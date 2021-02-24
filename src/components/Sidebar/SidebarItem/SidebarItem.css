@@ -1,0 +1,14 @@
+.sidebaritemlist {
+    margin-top: 12px;
+}
+
+.sidebaritem {
+    display: flex;
+    align-items: center;
+    padding: 8px 5%;
+    gap: 5%;
+}
+.sidebaritem:hover {
+    cursor: pointer;
+    background-color: #14141444;
+}

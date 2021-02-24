@@ -1,12 +1,20 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: local('Proxima Nova'), url(./assets/fonts/ProximaNova-Regular.otf) format('opentype');
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box;}
 *:focus {outline: none;}
-html, body {height: 100%;}
-body {font-family: sans-serif;}
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+
+
+html, body, .App, #root {height: 100%;}
+body {font-family: 'Proxima Nova', sans-serif; font-weight: 600;}
+
+::placeholder {
   color: #ffffffa9;
   opacity: 1; /* Firefox */
 }
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
   color: #ffffffa9;
 }
 .chatwrapper {
@@ -14,6 +22,13 @@ body {font-family: sans-serif;}
   height: 100%;
 }
 .sidebar {
-  background-color: brown;
+  flex-grow: 1;
+  flex-basis: 150px;
+  background-color: #3F0E40;
   height: 100%;
+  font-size: 14px;
+  color: #ffffff90;
+}
+.chat {
+  flex-grow: 9;
 }
