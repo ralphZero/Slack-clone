@@ -1,7 +1,7 @@
 import React from 'react'
-import ChatHeader from '../ChatHeader/Header/ChatHeader'
+import TopHeader from './TopHeader/Header/TopHeader'
 import Sidebar from '../Sidebar/Sidebar'
-import Chat from './Chat'
+import Chat from './Chat/Chat'
 
 const ChatPage = () => {
     const style = {
@@ -11,7 +11,7 @@ const ChatPage = () => {
     }
     return (
         <div style={style}>
-            <ChatHeader />
+            <TopHeader />
             <div className='chatwrapper'>
                 <Sidebar />
                 <Chat />

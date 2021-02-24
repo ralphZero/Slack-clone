@@ -1,9 +1,10 @@
 import React from 'react';
+import ChatHeader from './ChatHeader/ChatHeader';
 
 const Chat = () => {
     return (
         <div className='chat'>
-            Chat
+            <ChatHeader />
         </div>
     );
 }

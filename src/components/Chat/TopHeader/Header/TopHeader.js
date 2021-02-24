@@ -1,9 +1,9 @@
 import React from 'react';
-import style from './ChatHeader.module.css';
+import style from './TopHeader.module.css';
 import SearchWrapper from '../Search/SearchWrapper';
 import UserWrapper from '../User/UserWrapper';
 
-const ChatHeader = () => {
+const TopHeader = () => {
     return (
         <header className={style.container}>
             <div style={{width: '32px'}}></div>
@@ -13,4 +13,4 @@ const ChatHeader = () => {
     );
 }
 
-export default ChatHeader;
+export default TopHeader;

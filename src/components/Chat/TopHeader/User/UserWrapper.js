@@ -1,5 +1,5 @@
 import React from 'react';
-import PlaceholderImg from '../../../assets/profile-placeholder.png';
+import PlaceholderImg from '../../../../assets/profile-placeholder.png';
 import './UserWrapper.css';
 
 const UserWrapper = () => {
