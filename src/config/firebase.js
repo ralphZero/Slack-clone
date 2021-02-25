@@ -1,4 +1,6 @@
 import firebase from 'firebase/app'
+import 'firebase/analytics';
+import 'firebase/firestore';
 
 var firebaseConfig = {
     apiKey: process.env.REACT_APP_API_KEY,
@@ -11,6 +13,7 @@ var firebaseConfig = {
 };
   
 firebase.initializeApp(firebaseConfig);
+firebase.firestore().settings({ timestampsInSnapshots: true });
 firebase.analytics();
 
 export default firebase
