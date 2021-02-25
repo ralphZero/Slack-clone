@@ -1,10 +1,11 @@
 import firebase from 'firebase';
 
-export const AddChannel = (title) => {
+export const AddChannel = (channel) => {
     return (dispatch, getState, { getFirebase }) => {
         let firestore = getFirebase().firestore();
         firestore.collection('rooms').add({
-            title,
+            title: channel.title,
+            description: channel.desc,
             createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
             updateAt: firebase.firestore.Timestamp.fromDate(new Date())
         })

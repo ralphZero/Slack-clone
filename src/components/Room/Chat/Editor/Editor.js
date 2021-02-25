@@ -22,9 +22,16 @@ const Editor = () => {
         'link'
     ];
 
+    const style = { margin: '12px',
+        border: '1px solid #ccc',
+        borderRadius: 8, 
+        maxHeight: '45%', 
+        position: 'relative'
+    }
+
     return (
-        <div style={{margin: '12px', border: '1px solid #ccc', borderRadius: 8, maxHeight: '45%', position: 'relative'}}>
-            <ReactQuill theme='snow' modules={modules} formats={formats} value={state} onChange={setstate} />
+        <div style={style}>
+            <ReactQuill theme='snow' placeholder="Message #design" modules={modules} formats={formats} value={state} onChange={setstate} />
             <SendIcon className="editor__sendicon" />
         </div>
     );

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AddRoundedIcon from '@material-ui/icons/AddRounded';
 import './Channel.css';
 import Channel from './Channel';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import { AddChannel } from '../../../store/actions/ChannelAction';
+import { ModalContext } from '../../../context/ModalContext';
 
 const ChannelList = (props) => {
 
@@ -15,11 +15,11 @@ const ChannelList = (props) => {
         );
     });
 
+    const { toggleModal } = useContext(ModalContext);
+
     const handleAddChannel = () => {
-        let channel = prompt("Create a channel");
-        if(channel != null) {
-            props.addChannel(channel);
-        }
+        // open the modal
+        toggleModal('addChannel');
     }
 
     return (
@@ -46,13 +46,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addChannel: (title) => dispatch(AddChannel(title))
-    }
-}
-
 export default compose(
-    firestoreConnect([{ collection: 'rooms' }]),
-    connect(mapStateToProps, mapDispatchToProps)
+    firestoreConnect([{ collection: 'rooms', orderBy: ['createdAt', 'asc'] }]),
+    connect(mapStateToProps)
 )(ChannelList);
