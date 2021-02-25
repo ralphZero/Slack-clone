@@ -1,0 +1,13 @@
+.editor__sendicon {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-right: 12px;
+    margin-top: 8px;
+    color: '#444';
+}
+
+.editor__sendicon:hover {
+    cursor: pointer;
+    color: #0066CC;
+}
