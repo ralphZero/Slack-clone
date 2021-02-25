@@ -2,6 +2,10 @@
     display: flex;
     gap: 8px;
     margin: 12px 0;
+    padding: 8px;
+}
+.messageitem:hover {
+    background-color: #14141418;
 }
 .messageitem__thumbnailwrapper {
     flex-shrink: 1;
