@@ -3,7 +3,7 @@ import TopHeader from './TopHeader/Header/TopHeader'
 import Sidebar from '../Sidebar/Sidebar'
 import Chat from './Chat/Chat'
 
-const ChatPage = () => {
+const Room = () => {
     const style = {
         display: 'flex',
         flexDirection: 'column',
@@ -19,4 +19,4 @@ const ChatPage = () => {
         </div>
     )
 }
-export default ChatPage
+export default Room

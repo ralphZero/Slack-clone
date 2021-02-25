@@ -1,0 +1,38 @@
+.messageitem {
+    display: flex;
+    gap: 8px;
+    margin: 12px 0;
+}
+.messageitem__thumbnailwrapper {
+    flex-shrink: 1;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+}
+
+.messageitem__thumbnailwrapper > img {
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+}
+.messageitem__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.messageitem__usernametimewrapper {
+    font-size: 14px;
+    font-weight: 700;
+}
+.messageitem__username {
+    margin-right: 8px;
+}
+.messageitem__time {
+    font-size: 12px;
+    font-weight: 300;
+    color: #333;
+}
+.messageitem__message {
+    font-size: 14px;
+    font-weight: 300;
+}
