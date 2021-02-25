@@ -43,3 +43,18 @@ body {font-family: 'Proxima Nova', sans-serif;}
 .ql-container {
   border: none !important;
 }
+
+.quill {
+  display: flex;
+  flex-direction: column-reverse;
+  overflow: hidden;
+}
+
+.ql-container.ql-snow {
+  overflow-y: auto;
+  max-height: 25vh;
+}
+
+.ql-editor {
+  overflow-y: hidden;
+}

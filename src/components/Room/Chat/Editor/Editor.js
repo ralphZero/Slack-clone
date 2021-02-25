@@ -12,8 +12,7 @@ const Editor = () => {
         toolbar: [
           ['bold', 'italic', 'underline','strike', 'blockquote'],
           [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-          ['link'],
-          ['clean']
+          ['link']
         ],
       };
     
@@ -24,7 +23,7 @@ const Editor = () => {
     ];
 
     return (
-        <div style={{margin: '12px', border: '1px solid #ccc', borderRadius: 8, maxHeight: '45%', overflowY: 'auto', position: 'relative'}}>
+        <div style={{margin: '12px', border: '1px solid #ccc', borderRadius: 8, maxHeight: '45%', position: 'relative'}}>
             <ReactQuill theme='snow' modules={modules} formats={formats} value={state} onChange={setstate} />
             <SendIcon className="editor__sendicon" />
         </div>
