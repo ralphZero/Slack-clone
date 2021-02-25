@@ -16,7 +16,7 @@ const ThemeContextProvider = (props) => {
                 headerColor: '#284CA8',
                 sideColor: '#19171D',
                 chatBackground: '#1A1D21',
-                chatColor: '#80808080'
+                chatColor: '#FFFFFFF8'
             }
         }
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './components/Login/Login';
-import ChatPage from './components/Chat/ChatPage';
+import Room from './components/Room/Room';
 import ThemeContextProvider from './context/ThemeContext';
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
         <BrowserRouter>
           <Switch>
             <Route exact path='/' component={Login} />
-            <Route path='/chat' component={ChatPage} />
+            <Route path='/room' component={Room} />
           </Switch>
         </BrowserRouter>
       </ThemeContextProvider>
