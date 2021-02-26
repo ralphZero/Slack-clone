@@ -4,7 +4,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import './Editor.css';
 
-const Editor = () => {
+const Editor = (props) => {
 
     const [state, setstate] = useState('');
     
@@ -31,7 +31,7 @@ const Editor = () => {
 
     return (
         <div style={style}>
-            <ReactQuill theme='snow' placeholder="Message #design" modules={modules} formats={formats} value={state} onChange={setstate} />
+            <ReactQuill theme='snow' placeholder='Message #channel' modules={modules} formats={formats} value={state} onChange={setstate} />
             <SendIcon className="editor__sendicon" />
         </div>
     );

@@ -1,0 +1,52 @@
+.login__container {
+    background-color: #411643;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login__imgwrapper {
+    display: flex;
+    justify-content: center;
+    object-fit: scale-down;
+}
+
+.login__card {
+    width: 22rem;
+}
+
+.login__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0px 0px 15px 10px #3b3b3b8f;
+}
+
+.login__body > h3 {
+    font-size: 24px;
+}
+
+.login__body > p {
+    font-size: 16px;
+    font-weight: 300;
+    color: #33333394;
+    text-align: center;
+}
+.login__body-google {
+    width: fit-content;
+    height: fit-content;
+    line-height: 0;
+    border: none;
+    border-radius: 4px;
+}
+
+.login__body-google:hover {
+    filter: brightness(0.8);
+    cursor: pointer;
+}

@@ -20,7 +20,7 @@ const Chat = (props) => {
             <ChatHeader title={channel.title} desc={channel.description} />
             <Container>
                 <MessageView />
-                <Editor />
+                <Editor/>
             </Container>
         </div>
     );
@@ -47,7 +47,7 @@ const Container = (props) => {
 
 const mapStateToProps = (state, props) => {
     let rooms = state.firestore.data.rooms;
-    
+    console.log(state);
     return {
         channel: rooms && rooms[props.id]
     }
