@@ -1,0 +1,19 @@
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+
+.splashscreen {
+    background-color: #411643;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.splashscreen__logo {
+    animation: rotation 2s infinite linear;
+}

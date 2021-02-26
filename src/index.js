@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Splashscreen from './components/Splashscreen/Splashscreen';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware } from 'redux';
 import { getFirebase, ReactReduxFirebaseProvider, isLoaded } from 'react-redux-firebase';
@@ -27,7 +28,7 @@ const rrfProps = {
 
 const AuthIsLoaded = ({ children }) => {
   const auth = useSelector(state => state.firebase.auth);
-  if (!isLoaded(auth)) return <div>Splash screen ...</div>;
+  if (!isLoaded(auth)) return <Splashscreen />;
   return children;
 }
 
