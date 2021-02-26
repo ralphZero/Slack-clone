@@ -9,10 +9,21 @@
 .channel {
     display: flex;
     align-items: center;
+    text-decoration: none;
+    color: #ffffffa0;
     padding: 6px 5%;
     gap: 5%;
 }
-.channel:hover {
+
+.channel.selected {
+    background-color: #1164A3;
+    color: #ffffff;
+}
+.selected:hover {
+    cursor: pointer;
+}
+
+.channel:not(.selected):hover {
     cursor: pointer;
     background-color: #14141444;
 }

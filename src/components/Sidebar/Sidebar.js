@@ -4,7 +4,7 @@ import SidebarItemList from './SidebarItem/SidebarItemList';
 import ChannelList from './Channels/ChannelList';
 import { ThemeContext } from '../../context/ThemeContext';
 
-const Sidebar = () => {
+const Sidebar = (props) => {
 
     const { isLightTheme, light, dark } = useContext(ThemeContext);
     const theme = isLightTheme ? light : dark;
@@ -14,7 +14,7 @@ const Sidebar = () => {
         <div style={{backgroundColor: theme.sideColor}} className='sidebar'>
             <NewMessageButton />
             <SidebarItemList />
-            <ChannelList />
+            <ChannelList {...props}/>
         </div>
     );
 }

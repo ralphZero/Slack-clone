@@ -32,12 +32,12 @@ const PeopleGroup = (props) => {
     )
 }
 
-const ChatHeader = () => {
+const ChatHeader = ({ title, desc }) => {
     return (
         <div className='chatheader'>
             <TitleGroup>
-                <Title />
-                <Topic />
+                <Title title={title}/>
+                <Topic desc={desc} />
             </TitleGroup>
             <PeopleGroup>
                 <PersonAddOutlinedIcon />

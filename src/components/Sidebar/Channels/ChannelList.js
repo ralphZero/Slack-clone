@@ -8,10 +8,12 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { ModalContext } from '../../../context/ModalContext';
 
 const ChannelList = (props) => {
+    let query = new URLSearchParams(props.location.search);
 
     const list = props.rooms && props.rooms.map((room) => {
+        const isSelected = query.get('channel') === room.id;
         return (
-            <Channel key={room.id} item={room} />
+            <Channel key={room.id} item={room} selected={isSelected} />
         );
     });
 
@@ -40,7 +42,6 @@ const ChannelTitle = ({ onAdd }) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         rooms: state.firestore.ordered.rooms
     }

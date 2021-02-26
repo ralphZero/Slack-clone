@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Channel = ({ item }) => {
+const Channel = ({ item, selected }) => {
+
+    const selectedClass = selected ? 'selected' : '';
+
     return (
-        <div className='channel'>
+        <Link to={'/room?channel='+item.id} className={'channel ' + selectedClass}>
             <span>#</span>
             <span>{item.title}</span>
-        </div>
+        </Link>
     );
 }
 

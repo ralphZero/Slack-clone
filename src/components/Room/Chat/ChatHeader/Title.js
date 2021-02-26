@@ -2,10 +2,10 @@ import React from 'react';
 import StarOutlineRoundedIcon from '@material-ui/icons/StarOutlineRounded';
 import './ChatHeader.css';
 
-const Title = () => {
+const Title = ({ title }) => {
     return (
         <div className='chatheader__title'>
-            #design
+            #{title}
             <StarOutlineRoundedIcon fontSize="small" color="disabled" />
         </div>
     );
