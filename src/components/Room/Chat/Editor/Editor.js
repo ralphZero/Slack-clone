@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import SendIcon from '@material-ui/icons/Send';
 import ReactQuill from 'react-quill';
+import DOMPurify from 'dompurify';
+import { connect } from 'react-redux';
+import { SaveMessage } from '../../../../store/actions/MessageActions';
 import 'react-quill/dist/quill.snow.css';
 import './Editor.css';
 
@@ -29,12 +32,35 @@ const Editor = (props) => {
         position: 'relative'
     }
 
+    const handleSend = (e) => {
+        if(state){
+            //sanitize
+            let cleanMessage = DOMPurify.sanitize(state);
+            //save
+            props.saveMessage(cleanMessage, props.currentId);
+            //clear
+            setstate('');
+        }
+    }
+
     return (
         <div style={style}>
             <ReactQuill theme='snow' placeholder='Message #channel' modules={modules} formats={formats} value={state} onChange={setstate} />
-            <SendIcon className="editor__sendicon" />
+            <SendIcon className="editor__sendicon" onClick={e => handleSend(e)}/>
         </div>
     );
 }
 
-export default Editor;
+const mapStateToProps = (state) => {
+    return {
+        currentId: state.channel.currentId
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        saveMessage: (message, currentId) => dispatch(SaveMessage(message, currentId))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Editor);

@@ -38,7 +38,8 @@ export default compose(
                 doc: props.currentId, 
                 subcollections: [
                     {
-                        collection: 'messages'
+                        collection: 'messages',
+                        orderBy: ['createdAt', 'asc']
                     }
                 ],
                 storeAs: 'messages'

@@ -50,10 +50,9 @@ const UsernameTime = ({ name, createdAt }) => {
 }
 
 const Message = ({ message }) => {
+    const data = {__html: message};
     return (
-        <div className="messageitem__message">
-            { message }
-        </div>
+        <div className="messageitem__message" dangerouslySetInnerHTML={data}></div>
     )
 }
 
