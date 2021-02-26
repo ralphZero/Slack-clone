@@ -5,9 +5,7 @@ const initState = {
 export const channelReducer = (state = initState, action) => {
     switch (action.type) {
         case 'ADD_CHANNEL_SUCCESS':
-            return {
-                currentId: action.id
-            };
+            return state;
         case 'ADD_CHANNEL_FAILED':
             return state;
         case 'UPDATE_CURRENT_CHANNEL':

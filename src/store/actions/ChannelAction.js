@@ -9,7 +9,7 @@ export const AddChannel = (channel) => {
             createdAt: firebase.firestore.Timestamp.fromDate(new Date()),
             updateAt: firebase.firestore.Timestamp.fromDate(new Date())
         })
-        .then((doc) => {dispatch({ type: 'ADD_CHANNEL_SUCCESS', id: doc.id})})
+        .then((doc) => dispatch({ type: 'ADD_CHANNEL_SUCCESS'}))
         .catch((error) => {dispatch({ type: 'ADD_CHANNEL_FAILED' }) });
     }
 }
