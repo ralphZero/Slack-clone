@@ -29,3 +29,15 @@ export const LoginWithGoogle = () => {
         });
     }
 }
+
+export const SignOut = () => {
+    return (dispatch, getState, { getFirebase }) => {
+        const firebase = getFirebase();
+        firebase.auth().signOut().then(() => {
+            dispatch({ type: 'LOGOUT_SUCCESS'})
+        })
+        .catch((error) => {
+            dispatch({ type: 'LOGOUT_ERROR', error});
+        });
+    }
+}
