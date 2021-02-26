@@ -4,17 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore, applyMiddleware } from 'redux';
-import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
+import { getFirebase, ReactReduxFirebaseProvider, isLoaded } from 'react-redux-firebase';
 import { RootReducer } from './store/reducers/RootReducer';
-import { createFirestoreInstance  } from 'redux-firestore';
-import { Provider } from 'react-redux';
+import { createFirestoreInstance } from 'redux-firestore';
+import { Provider, useSelector } from 'react-redux';
 import firebase from './config/firebase';
 import thunk from 'redux-thunk';
 
 const store = createStore(RootReducer, applyMiddleware(thunk.withExtraArgument({ getFirebase })));
 
 const rrfConfig = {
-  userProfile: 'users', 
+  userProfile: 'users',
   useFirestoreForProfile: true
 }
 
@@ -25,11 +25,19 @@ const rrfProps = {
   createFirestoreInstance
 }
 
+const AuthIsLoaded = ({ children }) => {
+  const auth = useSelector(state => state.firebase.auth);
+  if (!isLoaded(auth)) return <div>Splash screen ...</div>;
+  return children;
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ReactReduxFirebaseProvider {...rrfProps}>
-        <App />
+        <AuthIsLoaded>
+          <App />
+        </AuthIsLoaded>
       </ReactReduxFirebaseProvider>
     </Provider>
   </React.StrictMode>,

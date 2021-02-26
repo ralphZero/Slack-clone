@@ -1,9 +1,14 @@
 import React from 'react'
 import TopHeader from './TopHeader/Header/TopHeader'
 import Sidebar from '../Sidebar/Sidebar'
-import Chat from './Chat/Chat'
+import Chat from './Chat/Chat';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 const Room = (props) => {
+
+    if(props.auth.isEmpty) return <Redirect to="/" />;
+
     let query = new URLSearchParams(props.location.search);
 
     const show = query.has('channel') ? (
@@ -17,6 +22,7 @@ const Room = (props) => {
         flexDirection: 'column',
         height: '100%'
     }
+
     return (
         <div style={style}>
             <TopHeader />
@@ -27,4 +33,11 @@ const Room = (props) => {
         </div>
     )
 }
-export default Room
+
+const mapStateToProps = (state) => {
+    return {
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStateToProps)(Room)
