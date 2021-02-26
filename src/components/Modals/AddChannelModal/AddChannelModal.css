@@ -24,10 +24,11 @@
     border-width: 1px;
     border-style: solid;
     border-radius: 5px;
+    background-color: transparent;
 }
 
 .addchannelmodal__form > input::placeholder {
-    color: #000;
+    color: #383838;
     opacity: 0.6;
 }
 

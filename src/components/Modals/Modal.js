@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { ModalContext } from '../../context/ModalContext';
+import { ThemeContext } from '../../context/ThemeContext';
 import './Modal.css';
 
 const Modal = (props) => {
@@ -7,6 +8,9 @@ const Modal = (props) => {
     const { title, tag } = props;
 
     const { state, toggleModal } = useContext(ModalContext);
+
+    const { isLightTheme, light, dark } = useContext(ThemeContext);
+    const theme = isLightTheme ? light : dark;
 
     const display = state[tag] ? 'block' : 'none';
 
@@ -19,8 +23,8 @@ const Modal = (props) => {
     }
 
     return (
-        <div style={{display}} className="modal" onClick={(e) => handleClose('container', e)}>
-            <div className="modal__content">
+        <div style={{display: display}} className="modal" onClick={(e) => handleClose('container', e)}>
+            <div style={{backgroundColor: theme.chatBackground, color: theme.chatColor}} className="modal__content">
                 <div className="modal__header">
                     <span className="modal__header-title">{title}</span>
                     <span className="close" onClick={(e) => handleClose('close', e)}>&times;</span>

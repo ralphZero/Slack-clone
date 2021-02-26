@@ -58,3 +58,6 @@ body {font-family: 'Proxima Nova', sans-serif;}
 .ql-editor {
   overflow-y: hidden;
 }
+.ql-editor.ql-blank::before {
+  color: #a9a9a9;
+}
