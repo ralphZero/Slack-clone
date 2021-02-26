@@ -1,16 +1,25 @@
 import React from 'react';
-import PlaceholderImg from '../../../../assets/profile-placeholder.png';
 import './UserWrapper.css';
+import { connect } from 'react-redux';
 
-const UserWrapper = () => {
+const UserWrapper = (props) => {
+
+    const { profile } = props;
+
     return (
         <div className='user'>
-            <span className='user__name'>ralphZero</span>
+            <span className='user__name'>{profile.name}</span>
             <button className='user__imgbutton'>
-                <img src={PlaceholderImg} alt='img'/>
+                <img src={profile.photoURL} alt='img'/>
             </button>
         </div>
     );
 }
 
-export default UserWrapper;
+const mapStateToProps = (state) => {
+    return {
+        profile: state.firebase.profile
+    }
+}
+
+export default connect(mapStateToProps)(UserWrapper);
