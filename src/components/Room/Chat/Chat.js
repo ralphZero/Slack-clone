@@ -5,21 +5,20 @@ import MessageView from './MessageView/MessageView';
 import Editor from './Editor/Editor';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-import { firestoreConnect } from 'react-redux-firebase';
 
 const Chat = (props) => {
 
     const { isLightTheme, light, dark } = useContext(ThemeContext);
     const theme = isLightTheme ? light : dark;
 
-    const { channel } = props;
+    const { channel, currentId } = props;
 
-    if(channel)
+    if(channel && currentId)
     return (
         <div style={{backgroundColor: theme.chatBackground, color: theme.chatColor}} className='chat'>
             <ChatHeader title={channel.title} desc={channel.description} />
             <Container>
-                <MessageView />
+                <MessageView room={currentId} />
                 <Editor/>
             </Container>
         </div>
@@ -47,17 +46,13 @@ const Container = (props) => {
 
 const mapStateToProps = (state, props) => {
     let rooms = state.firestore.data.rooms;
-    console.log(state);
     return {
-        channel: rooms && rooms[props.id]
+        channel: rooms && rooms[props.id],
+        currentId: state.channel.currentId
     }
+
 }
 
 export default compose(
-    /* firestoreConnect((props) => {
-        return [
-            { collection: 'rooms', doc: props.id }
-        ]
-    }), */
     connect(mapStateToProps)
 )(Chat);

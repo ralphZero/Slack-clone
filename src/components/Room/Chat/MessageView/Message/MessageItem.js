@@ -1,14 +1,16 @@
 import React from 'react';
-import PlaceholderImg from '../../../../../assets/profile-placeholder.png';
+import moment from 'moment'
 import './MessageItem.css';
 
-const MessageItem = () => {
+const MessageItem = ({ message }) => {
+    const date = moment(message.createdAt.toDate()).calendar();
+
     return (
         <Container>
-            <Thumbnail />
+            <Thumbnail img={message.photoUrl} />
             <Items>
-                <UsernameTime />
-                <Message />
+                <UsernameTime name={message.name} createdAt={date}/>
+                <Message message={message.message}/>
             </Items>
         </Container>
     );
@@ -22,10 +24,10 @@ const Container = (props) => {
     )
 }
 
-const Thumbnail = () => {
+const Thumbnail = ({ img }) => {
     return (
         <div className="messageitem__thumbnailwrapper">
-            <img src={PlaceholderImg} alt="thumb"/>
+            <img src={img} alt="thumb"/>
         </div>
     )
 }
@@ -38,20 +40,19 @@ const Items = (props) => {
     )
 }
 
-const UsernameTime = () => {
+const UsernameTime = ({ name, createdAt }) => {
     return (
         <div className="messageitem__usernametimewrapper">
-            <span className="messageitem__username">Bob l'eponge</span>
-            <span className="messageitem__time">12:30PM</span>
+            <span className="messageitem__username">{ name }</span>
+            <span className="messageitem__time">{ createdAt }</span>
         </div>
     )
 }
 
-const Message = () => {
+const Message = ({ message }) => {
     return (
         <div className="messageitem__message">
-            Message
-            <div>Message</div>
+            { message }
         </div>
     )
 }
