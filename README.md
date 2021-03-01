@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-<img src="" />
+![add_slack_clone](https://user-images.githubusercontent.com/40446586/109559559-d285a380-7aa8-11eb-8459-94f1a692050c.jpeg)
 
 ## Available Scripts
 
