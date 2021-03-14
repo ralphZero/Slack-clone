@@ -13,7 +13,10 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    overflow: hidden;
 }
 .splashscreen__logo {
     animation: rotation 2s infinite linear;
+    height: 25vh;
+    width: auto;
 }
